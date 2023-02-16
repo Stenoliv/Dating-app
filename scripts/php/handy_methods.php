@@ -13,11 +13,21 @@ function test_input($data) {
 
 // Databaskonfiguration
 $servername = "localhost";
-$dbname = "bistromd";
-$username = "bistromd";
 include "hemlis.php";
 // hemlis.php ser ut såhär:
-// <?php $password = "sup3rh3mlis";
+/* <?php 
+    $dbname = "din databas";
+    $username = "ditt användarnamn";
+    $password = "sup3rh3mlis";
+*/
 
-
+// try to create connection
+try {
+$conn = new PDO("mysql:host=$servername;dbname=$dbnmae", $username, $password);
+// set the PDO error mode to exception
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+echo "Connected successfully";
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
 ?>
