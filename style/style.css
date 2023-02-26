@@ -1,4 +1,15 @@
-/* Dennis snygga stilfil */
+@font-face {
+    font-family: 'Papers please';
+    src: url('./fonts/AgitPropMedium.eot');
+    src: url('./fonts/AgitPropMedium.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/AgitPropMedium.woff2') format('woff2'),
+        url('./fonts/AgitPropMedium.woff') format('woff'),
+        url('./fonts/AgitPropMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 /* Sidhuvudet logo, firmanamn och nav */
 header {
