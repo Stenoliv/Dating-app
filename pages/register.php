@@ -16,7 +16,9 @@
 
             <article>
                 <h2>Welcome to Profiles Please comrade!</h2>
-                <?php include "../scripts/php/view_profiles.php" ?>
+                <h2> Here you will submit your registration!</h2>
+                <?php include "../scripts/php/view_register.php"?>
+                
             </article>
 
         </section>

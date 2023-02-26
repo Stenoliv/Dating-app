@@ -1,12 +1,13 @@
 <header>
     <!-- Logo och meny i headern -->
     <img src="../media/logo.svg" alt="Website logo" />
-    <div id="logo">DenApp</div>
+    <div id="logo">Profiles Please</div>
 
     <nav>
         <!-- Huvudmenyn -->
         <ul>
             <li><a href="./">Home</a></li>
+            <li><a href="../pages/register.php">Register</a></li>
             <li><a href="../pages/profile.php">Profile</a></li>
             <?php
             // Hälsa på återkommande användare
