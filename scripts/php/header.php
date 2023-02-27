@@ -7,7 +7,17 @@
         <!-- Huvudmenyn -->
         <ul>
             <li><a href="./">Home</a></li>
-            <li><a href="../pages/register.php">Register</a></li>
+            <?php 
+            if(!isset($_SESSION['username']))
+            {
+                print("<li><a href='../pages/login.php'>login</a></li>
+                <li><a href='../pages/register.php'>Register</a></li>");
+            }
+            else
+            {
+                //tobehere
+            } 
+            ?>
             <li><a href="../pages/profile.php">Profile</a></li>
             <?php
             // Hälsa på återkommande användare
