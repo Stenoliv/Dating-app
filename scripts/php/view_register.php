@@ -3,7 +3,7 @@
     <br>
     E-mail: <input type="text" name="email" value="">
     <br>
-    Firstname: <input type="text" name="firsname" value="">
+    Firstname: <input type="text" name="firstname" value="">
     <br>
     Surname: <input type="text" name="lastname" value="">
     <br>
