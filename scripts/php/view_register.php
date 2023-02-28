@@ -4,7 +4,7 @@
     if(isset($_COOKIE["err"]))
     {
         $formerror = $_COOKIE["err"];
-        setcookie("err",NULL,-1,"/");
+        setcookie("err","",-1,"/");
         echo $formerror;
     }
     ?>

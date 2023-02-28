@@ -7,7 +7,7 @@ if (isset($_COOKIE[$cookiename])) {
     $class = "visible";
     $cookiemsg = explode(":", $_COOKIE[$cookiename]);
     $msg = $cookiemsg[0];
-    setcookie($cookiename, null, -1, "/");
+    setcookie($cookiename, "", -1, "/");
 } else $class = "hidden"; ?>
 <article class="edit-profile_form">
     <div class="edit-profile_form-borderstyle">
