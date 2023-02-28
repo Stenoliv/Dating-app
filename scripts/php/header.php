@@ -18,12 +18,12 @@
                 //tobehere
             } 
             ?>
-            <li><a href="../pages/profile.php">Profile</a></li>
             <?php
             // Hälsa på återkommande användare
             if (isset($_SESSION['username'])) {
                 //print("Välkommen tillbaka ". $_SESSION['username']);
                 print("<li><a href='./profile.php'>". $_SESSION['username']."'s profile</a></li>");
+                print("<li><a href='../scripts/php/model_logout.php'>Logout</a></li>");
             }
             ?>
         </ul>

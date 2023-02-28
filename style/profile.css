@@ -1,0 +1,225 @@
+:root {
+    --paperColor: #e6d977;
+}
+
+* {
+    font-family: Papers please;
+}
+
+.edit-profile_form {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 500px;
+    border: 15px solid transparent;
+    border-image-source: url(../media/test_frame2.png);
+    border-image-slice: 15;
+    border-image-repeat: round;
+    border-image-outset: 5px;
+    background-color: var(--paperColor);
+    overflow: hidden;
+}
+
+.edit-profile_form-borderstyle {
+    border: 12px solid transparent;
+    border-image-source: url(../media/test_frame.png);
+    border-image-slice: 13;
+    border-image-repeat: stretch;
+    background-color: var(--paperColor);
+}
+
+.edit-profile_form h2 {
+    text-align: center;
+    padding: 5px;
+    padding-top: 15px;
+    margin: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-bottom: 5px black dashed;
+}
+
+.edit-profle_info-box {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    margin: 15px;
+}
+
+.edit-profle_profile-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-size: 10px;
+}
+
+.edit-profle_profile-text input {
+    font-size: 10px;
+}
+
+.edit-profile_profile-pic {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-profile_row {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    border-bottom: 1px black solid;
+    padding: 0;
+    margin: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: var(--paperColor);
+    min-height: 30px;
+}
+
+h4.edit-profile_row {
+    padding: 0;
+    margin: 0;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    justify-content: center;
+}
+
+.edit-profile_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.edit-profile_lc {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    padding-left: 10px;
+    background-color: var(--paperColor);
+}
+
+.edit-profile_rc {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    justify-content: center;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: var(--paperColor);
+    word-wrap: normal;
+    overflow-x: hidden;
+}
+
+.edit-profile_lc.bio {
+    justify-content: flex-start;
+}
+
+textarea.edit-profile_rc.bio {
+    word-wrap: normal;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 80px;
+}
+
+.edit-profile_About-me {
+    border-top: 5px black dashed;
+    margin: 15px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 10px;
+}
+
+.edit-profile_About-me * {
+    font-size: 10px;
+}
+
+.edit-profile_AcceptChanges {
+    display: flex;
+    margin: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    flex: 1;
+}
+
+.edit-profile_AcceptChanges.lc {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.edit-profile_AcceptChanges.rc {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.error-message.visible {
+    display: flex;
+    visibility: visible;
+    justify-content: center;
+    height: 40px;
+}
+
+.edit-profile_AcceptChanges button {
+    background-color: var(--paperColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border: 8px solid transparent;
+    border-image-source: url(../media/test_frame3.png);
+    border-image-slice: 8;
+    border-image-repeat: stretch;
+    background-color: var(--paperColor);
+}
+
+.error-message.hidden {
+    display: flex;
+    height: 40px;
+    content-visibility: hidden;
+}
+
+.green {
+    font-size: 25px;
+    color: green;
+    margin: 0;
+    padding: 0;
+}
+
+.red {
+    font-size: 25px;
+    color: red;
+    margin: 0;
+    padding: 0;
+}
+
+.delete-account-button {
+    width: 250px;
+    margin: 0;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--paperColor);
+    text-align: center;
+    padding: 0;
+    border: 8px solid transparent;
+    border-image-source: url(../media/test_frame3.png);
+    border-image-slice: 8;
+    border-image-repeat: stretch;
+    background-color: var(--paperColor);
+}
