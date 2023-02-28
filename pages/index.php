@@ -16,7 +16,7 @@
 
             <article>
                 <h2>Welcome to Profiles Please comrade!</h2>
-                <?php include "../scripts/php/view_profiles.php" ?>
+                <?php include "../scripts/php/view_advertisements.php" ?>
             </article>
 
         </section>

@@ -79,9 +79,9 @@ if(isset ($_POST['username']) && isset ($_POST['firstname']) && isset ($_POST['l
     else
     {
         $genderarray=[
-        "0" => 'male',
-        "1" => 'female',
-        "2" => 'other'
+        "1" => 'male',
+        "2" => 'female',
+        "3" => 'other'
         ];
         $gender = array_search($gender,$genderarray,true);
         echo $gender;
@@ -97,10 +97,10 @@ if(isset ($_POST['username']) && isset ($_POST['firstname']) && isset ($_POST['l
     else
     {
         $prefarray=[
-        "0" => 'male',
-        "1" => 'female',
-        "2" => 'other',
-        "3" => 'any'];
+        "1" => 'male',
+        "2" => 'female',
+        "3" => 'other',
+        "4" => 'any'];
         $preference = array_search($preference,$prefarray,true);
         echo $preference;
     }
@@ -122,7 +122,6 @@ if(isset ($_POST['username']) && isset ($_POST['firstname']) && isset ($_POST['l
         $gender = intval($gender);
         $preference = intval($preference);
         $salary = intval($salary);
-        $zipcode = intval($zipcode);
         $stmt->execute([$user,$hashedpassw,$firstname,$lastname,$salary,$zipcode,$bio,$gender,$preference,$email]);
         if($stmt)
         {
