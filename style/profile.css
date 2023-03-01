@@ -6,6 +6,11 @@
     font-family: Papers please;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 .edit-profile_form {
     display: block;
     width: 100%;
@@ -46,14 +51,13 @@
 .edit-profle_info-box {
     display: flex;
     flex-direction: row;
-    flex: 1;
     margin: 15px;
 }
 
 .edit-profle_profile-text {
     display: flex;
-    flex-direction: column;
     flex: 1;
+    flex-direction: column;
     font-size: 10px;
 }
 
@@ -63,10 +67,45 @@
 
 .edit-profile_profile-pic {
     display: flex;
-    flex-direction: column;
     flex: 1;
+    flex-direction: column;
+    font-size: 10px;
+}
+
+img.profile-picture {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 0;
+    display: flex;
+    flex: 5;
+    flex-direction: row;
+    border: 10px solid transparent;
+    border-radius: 30px;
+}
+
+.edit-profile_profile-pic-buttons  {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.edit-profile_profile-pic_upload {
+    font-size: 15px;
+    padding: 0;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: none;
 }
 
 .edit-profile_row {
@@ -131,7 +170,8 @@ textarea.edit-profile_rc.bio {
     word-wrap: normal;
     overflow-y: auto;
     overflow-x: hidden;
-    height: 80px;
+    resize: none;
+    height: 50px;
 }
 
 .edit-profile_About-me {
@@ -195,14 +235,14 @@ textarea.edit-profile_rc.bio {
 }
 
 .green {
-    font-size: 25px;
+    font-size: 20px;
     color: green;
     margin: 0;
     padding: 0;
 }
 
 .red {
-    font-size: 25px;
+    font-size: 20px;
     color: red;
     margin: 0;
     padding: 0;

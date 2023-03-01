@@ -5,13 +5,16 @@ $class = "";
 $cookiemsg = [0 => "", 1 => ""];
 if (isset($_COOKIE[$cookiename])) {
     $class = "visible";
-    $cookiemsg = explode(":", $_COOKIE[$cookiename]);
+    $cookiemsg = explode("/", $_COOKIE[$cookiename]);
     $msg = $cookiemsg[0];
     setcookie($cookiename, "", -1, "/");
 } else $class = "hidden"; ?>
+<?php
+if (!isset($_SESSION['username'])) header("Location: ./login.php");
+?>
 <article class="edit-profile_form">
     <div class="edit-profile_form-borderstyle">
-        <form action="../scripts/php/model_edit-profile.php" method="post">
+        <form action="../scripts/php/model_edit-profile.php" method="post" enctype="multipart/form-data">
             <h2>Dating Permit</h2>
             <div class="edit-profle_info-box">
                 <div class="edit-profle_profile-text">
@@ -37,11 +40,20 @@ if (isset($_COOKIE[$cookiename])) {
                         <input class="edit-profile_rc" type="number" name="zipcode" value="<?= $_SESSION['zipcode']
                                                                                             ?>">
                     </div>
-
-
                 </div>
                 <div class="edit-profile_profile-pic">
-                    Profile Pic
+                    <img class="profile-picture" src="
+                    <?php $defaultPic = "../media/profile-pictures/default_profile_pic.png";
+                    if (isset($_SESSION['profile_pic'])) {
+                        $profilePic = "../media/profile-pictures/" . $_SESSION['profile_pic'];
+                        if (file_exists($profilePic)) echo $profilePic;
+                        else echo $defaultPic;
+                    } else echo $defaultPic; ?>" alt="Profile Picture">
+                    <div class="edit-profile_profile-pic-buttons">
+                        <label for="fileUpload" class="edit-profile_profile-pic_upload">Upload new picture</label>
+                        <input id="fileUpload" type="file" name="fileToUpload" accept="image/jpg, image/jpeg, image/png">
+                        <input type="submit" name="upload-profile-pic" value="Change File">
+                    </div>
                 </div>
             </div>
             <div class="edit-profile_About-me">
@@ -86,7 +98,7 @@ if (isset($_COOKIE[$cookiename])) {
                     <button type="reset">Reset Changes</button>
                 </div>
                 <div class="edit-profile_AcceptChanges rc">
-                    <button type="submit">Approve Changes</button>
+                    <button type="submit" name="submit-changes" value="update_profile">Approve Changes</button>
                 </div>
             </div>
         </form>

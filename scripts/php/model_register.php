@@ -134,6 +134,7 @@ if(isset ($_POST['username']) && isset ($_POST['firstname']) && isset ($_POST['l
             $_SESSION['bio'] = $bio;
             $_SESSION['gender'] = $gender;
             $_SESSION['preference'] = $preference;
+            $_SESSION['profile_pic'] = $stmt->fetch(PDO::FETCH_ASSOC)['profile_pic'];
 
             header("Location:../../pages/");
             exit;

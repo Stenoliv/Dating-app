@@ -1,1 +1,6 @@
 hemlis.php
+
+#Ignore everything in profile-pictures except:
+media/profile-pictures/*
+#This file
+!media/profile-pictures/default_profile_pic.png
