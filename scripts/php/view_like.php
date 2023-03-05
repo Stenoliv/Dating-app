@@ -1,0 +1,1 @@
+<p><?php include "../scripts/php/model_like.php"?></p>

@@ -10,20 +10,10 @@
             <?php 
             if(!isset($_SESSION['username']))
             {
-                print("<li><a href='../pages/login.php'>login</a></li>
-                <li><a href='../pages/register.php'>Register</a></li>");
-            }
-            else
-            {
-                //tobehere
-            } 
-            ?>
-            <?php
-            // Hälsa på återkommande användare
-            if (isset($_SESSION['username'])) {
+                include "../scripts/php/notLoggedIn_header.php";
+            } else {
                 //print("Välkommen tillbaka ". $_SESSION['username']);
-                print("<li><a href='./profile.php'>". $_SESSION['username']."'s profile</a></li>");
-                print("<li><a href='../scripts/php/model_logout.php'>Logout</a></li>");
+                include "../scripts/php/loggedIn_header.php";
             }
             ?>
         </ul>

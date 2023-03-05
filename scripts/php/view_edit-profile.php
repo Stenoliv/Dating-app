@@ -102,7 +102,8 @@ if (!isset($_SESSION['username'])) header("Location: ./login.php");
                 </div>
             </div>
         </form>
-        <form class="edit-profile_column" action="../scripts/php/model_delete-account.php" method="post">
+        <form class="edit-profile_row" action="../scripts/php/model_delete-account.php" method="post">
+            <input class="delete-account-passw" type="password" name="user-passw" placeholder="Your password" required>
             <button class="delete-account-button" type="submit">Delete Dating Permit</button>
         </form>
     </div>

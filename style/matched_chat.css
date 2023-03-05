@@ -1,0 +1,172 @@
+:root {
+    --InfoFont: 15;
+    --YourColor: rgba(255, 251, 0, 0.7);
+    --OthersColor: rgba(163, 0, 0, 0.7);
+    --siteColor: rgb(180, 180, 180);
+    --dateColor:#0600ae;
+}
+
+.view_chat-match_box {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    height: 92vh;
+}
+
+/*STYLE: Matches*/
+.matches {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    background-color: var(--siteColor);
+}
+
+.match-chat-btn {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.match-chat-btn img {
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    display: flex;
+    object-fit: cover;
+    flex: 1;
+}
+
+.match-chat-name {
+    display: flex;
+    flex: 5;
+    padding-left: 15px;
+}
+
+
+/*STYLE: Chatbox*/
+.chatbox-messagers {
+    display: flex;
+    flex-direction: row;
+    flex: 4;
+    background-color: var(--siteColor);
+}
+
+.chatbox {
+    display: block;
+    flex-direction: column;
+    width: 100%;
+}
+
+.chat-info {
+    display: flex;
+    flex: 1;
+}
+
+.chat-info p {
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.chat-view {
+    height: 50vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+/*Style Messages*/
+.message {
+    display: block;
+    width: 60%;
+    background-color: white;
+}
+
+.my_text {
+    margin-left: auto;
+}
+
+.other_text {
+    margin-right: auto;
+}
+
+.message-div {
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.my_text .message-div {
+    color: var(--YourColor);
+}
+
+.other_text .message-div {
+    color: var(--OthersColor);
+}
+
+.message-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.message-sender {
+    font-size: var(--InfoFont);
+    font-weight: 100;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+}
+
+.message-date {
+    font-size: var(--InfoFont);
+    font-weight: 100;
+    padding: 0;
+    margin: 0;
+    color: var(--dateColor);
+}
+
+.message-msg {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.message-msg p {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    padding-top: 5px;
+    padding-left: 2px;
+    color: black;
+}
+
+.message-text_field {
+    margin: 0;
+    margin-left: 14px;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.chat-text-field {
+    display: flex;
+    flex: 5;
+    resize: none;
+    margin-right: 10px;
+}
+
+.send-btn {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    margin-right: 15px;
+}

@@ -20,6 +20,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             $_SESSION['gender'] = $result["gender"];
             $_SESSION['preference'] = $result["preference"];
             $_SESSION['profile_pic'] = $result["profile_pic"];
+            $_SESSION['id'] = $result['id'];
             header("Location:../../pages/");
             exit;
         } else {

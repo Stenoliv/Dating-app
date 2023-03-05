@@ -3,7 +3,7 @@
 $sql = "SELECT * FROM profiles LIMIT 5" ;
 $stmt = $conn->query($sql);
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-if($_SESSION['username']!="")
+if(isset($_SESSION['username']))
 {
     foreach($result as $value)
     {
