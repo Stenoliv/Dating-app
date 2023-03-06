@@ -12,6 +12,7 @@ if (!isset($_SESSION['username'])) header("Location: ./login.php");
     <title>Likes</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/matched_chat.css">
+    <link rel="icon" type="image/x-icon" href="../media/logoICO.ico">
 </head>
 
 <body>

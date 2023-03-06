@@ -32,4 +32,4 @@ setInterval(function() {
     xhttp.open("GET", "../scripts/php/ajax/refreshChat.php?id="+id)
     xhttp.send();
     console.log("RefreshChat()")
-}, 3000)*/
+}, 3000) */

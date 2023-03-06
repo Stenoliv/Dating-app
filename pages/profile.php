@@ -14,6 +14,7 @@ include "../scripts/php/checkIfLoggedIn.php";
     <title>Document</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/profile.css">
+    <link rel="icon" type="image/x-icon" href="../media/logoICO.ico">
 </head>
 
 <body>

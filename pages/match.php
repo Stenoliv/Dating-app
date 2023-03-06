@@ -11,6 +11,7 @@ if (!isset($_SESSION['username'])) header("Location: ./login.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Likes</title>
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="icon" type="image/x-icon" href="../media/logoICO.ico">
 </head>
 
 <body>
@@ -20,7 +21,7 @@ if (!isset($_SESSION['username'])) header("Location: ./login.php");
         <section>
 
             <article>
-                <?php include "../scripts/php/view_match.php" ?>
+                <?php include "../scripts/php/model_match.php" ?>
             </article>
 
         </section>

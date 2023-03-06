@@ -1,5 +1,12 @@
 <?php
-include "../scripts/php/default_match.php";
+include "../scripts/php/classes/class_display_match.php";
+
+if(!isset($_SESSION['username'])) {
+    session_unset();
+    session_destroy();
+    header("Location: ./");
+    exit;
+}
 
 $gender = 4;
 if ($_SESSION['preference'] == "1") $gender = 1;
@@ -7,7 +14,7 @@ else if ($_SESSION['preference'] == "2") $gender = 2;
 else if ($_SESSION['preference'] == "3") $gender = 3;
 
 
-$sql = "SELECT id, username, first_name, last_name, email, gender, preference, salary, zipcode, profile_pic, bio FROM profiles WHERE id !=:your_id AND id NOT IN 
+$sql = "SELECT * FROM profiles WHERE id !=:your_id AND id NOT IN 
 (SELECT liked_user_id FROM likes WHERE user_id = :your_id) 
 AND gender = IF(:gender <= 2, :gender, IF(:gender = 3, :gender, gender)) LIMIT 5";
 $stmt = $conn->prepare($sql);
