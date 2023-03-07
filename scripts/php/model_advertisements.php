@@ -1,8 +1,17 @@
 <?php
-
-$sql = "SELECT * FROM profiles LIMIT 5" ;
+if(isset($_COOKIE['viewdprof']))
+{
+    $id = $_COOKIE['viewdprof'];
+}
+else
+{
+    setcookie('viewdprof',0);
+    $id = 0;
+}
+$sql = "SELECT * FROM profiles ORDER BY id LIMIT $id, 5" ;
 $stmt = $conn->query($sql);
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+setcookie('viewdprof',$result['id'],time()+60*60*24*30*4);
 if(isset($_SESSION['username']))
 {
     foreach($result as $value)
