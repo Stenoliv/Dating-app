@@ -1,19 +1,15 @@
 <?php
-$id ="";
+$id =0;
 if(isset($_COOKIE['viewdprof']))
 {
     $id = $_COOKIE['viewdprof'];
 }
-else
-{
-    setcookie('viewdprof',0);
-    $id = 0;
-}
+
 
 if(isset($_SESSION['username']))
 {
     include "../scripts/php/model_filter.php";
-    setcookie('viewdprof',$result[array_key_last($result)]['id'],time()+60*60*24*30*4);
+    
     foreach($result as $value)
     {
         print("<div class = 'ads'> <p>".$value['username']."</p>"."<p>".$value['first_name']."</p>"."<p>".$value['last_name']."</p>".
