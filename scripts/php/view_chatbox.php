@@ -2,7 +2,7 @@
 if ($result) :
     $objChat = json_decode($result['Message'], TRUE);
 
-    $chatID = "Test";
+    $chatUsername = "Test";
     $otherID = "";
     if ($_SESSION['id'] == $result['FromUser']) {
         $otherID = $result['ToUser'];
@@ -14,12 +14,15 @@ if ($result) :
     $stmt = $conn->prepare($sql);
     $stmt->execute([$otherID]);
     if ($stmt->rowCount() == 1) {
-        $chatID = $stmt->fetch(PDO::FETCH_ASSOC)['username'];
+        $chatUsername = $stmt->fetch(PDO::FETCH_ASSOC)['username'];
     }
     ?>
     <div class="chat-info">
         <p>Chatting With:</p>
-        <p><?= $chatID ?></p>
+        <p><?= $chatUsername ?></p>
+        <form class="un_match" action="../scripts/php/model_unmatch.php" method="post">
+            <button type="submit" name="un-match" value="<?= $chatUsername ?>">UnMatch</button>
+        </form>
     </div>
     <div class="chat-view">
         <?php

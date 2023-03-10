@@ -25,9 +25,9 @@ class ModelMatchProfile
             <p>Preference: <?= $this->preference ?></p>
             <p>Gender: <?= $this->gender ?></p>
             <form action="../scripts/php/model_like-profile.php" method="post">
-                <input type="submit" name="Dislike" value="Decline">
-                <label for="like_button">Like Profile</label>
-                <input id="like_button" style="display:none;" type="submit" name="Like" value="<?= $this->id ?>">
+                <input type="submit" name="dislike_button" value="Decline">
+                <label for="like-button<?= $this->id?>">Like Profile</label>
+                <input style="display:none;" id="like-button<?= $this->id?>" type="submit" name="like_button" value="<?= $this->id ?>">
             </form>
         </div>
 <?php
