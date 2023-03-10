@@ -1,5 +1,5 @@
 <h2>Filter your results</h2>
-        <form method='post' action='./index.php'>
+        <form method='post' action='../scripts/php/model_filter.php'>
             Gender:
             <input type='radio' name='gender' <?php if (isset($gender) && $gender=='female') echo 'checked';?> value='2'>Female
             <input type='radio' name='gender' <?php if (isset($gender) && $gender=='male') echo 'checked';?> value='1'>Male

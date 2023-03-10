@@ -1,31 +1,63 @@
 <?php
 $id =0;
+if(isset($_SESSION['id']))
+{
+    $profileid = $_SESSION['id'];
+}
 if(isset($_COOKIE['viewdprof']))
 {
     $id = $_COOKIE['viewdprof'];
 }
-
-
 if(isset($_SESSION['username']))
 {
-    include "../scripts/php/model_filter.php";
+    if(!isset($_COOKIE['filter']))
+    {
+        $gend = 0;
+        $prefs = 0;
+        $salary = 0;
+        $likes = 0;
+        $filter = array($gend,$prefs,$likes,$salary);
+    }
+    else
+    {
+        $filter = json_decode($_COOKIE['filter']); 
+    }
+    
+    $sql = "SELECT * FROM profiles WHERE id>:lastid AND IF(:gender > 0,gender = :gender,gender=gender) 
+    AND IF(:preference > 0,preference = :preference,preference=preference) 
+    AND IF(:salary > 0,salary >= :salary,salary=salary)
+    AND IF(:likes > 0,likes >= :likes,likes=likes) AND id!=:yourid LIMIT 1";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([':lastid'=>$id,':gender'=>$filter[0],':preference'=>$filter[1],':likes'=>$filter[2],':salary'=>$filter[3],':yourid'=>$profileid]);
+    $result = $stmt ->fetchAll(PDO::FETCH_ASSOC);
+    if($stmt->rowCount()<=0) 
+    {
+        setcookie("viewdprof","",-1);
+        Print("<p>NO PROFILES FOUND</p>");
+    }
+    else setcookie('viewdprof',$result[array_key_last($result)]['id'],time()+60*60*24*30*4);
     
     foreach($result as $value)
     {
-        print("<div class = 'ads'> <p>".$value['username']."</p>"."<p>".$value['first_name']."</p>"."<p>".$value['last_name']."</p>".
-        "<p>".$value['bio']."</p>"."<p>".$value['salary']."</p>"."<p>".$value['email']."</p>".
-        "<p>".$value['likes']."</p>");
+        print("<div class = 'ads'> <div class='username'><p>Username: ".$value['username']."</p></div>"
+        ."<div class='firstname'><p>Firstname: ".$value['first_name']."</p></div>"
+        ."<div class='lastname'><p>Surname: ".$value['last_name']."</p></div>"
+        ."<div class='zipcode'><p>Zipcode: ".$value['zipcode']."</p></div>"
+        ."<div class='bio'><p>Bio: </p><p>".$value['bio']."</p></div>"
+        ."<div class='salary'><p>Salary: ".$value['salary']."</p></div>"
+        ."<div class='email'><p>Email: ".$value['email']."</p></div>"
+        ."<div class='likes'><p>Number of likes: ".$value['likes']."</p></div>");
 
         if($value['gender']==1) $gender = "Male"; 
         elseif($value['gender']==2) $gender = "Female";
         elseif($value['gender']==3) $gender = "Other";
-        print("<p>".$gender."</p>");
+        print("<div class='gender'><p>Gender: ".$gender."</p></div>");
 
         if($value['preference']==1) $pref = "Male";
         elseif($value['preference']==2) $pref = "Female";
         elseif($value['preference']==3) $pref = "other";
         elseif($value['preference']==4) $pref = "Any";
-        print("<p>".$pref."</p></div>");
+        print("<div class='preference'><p>Preference: ".$pref."</p></div>");
     }
 }
 else
@@ -41,11 +73,12 @@ else
     setcookie('viewdprof',$result[array_key_last($result)]['id'],time()+60*60*24*30*4);
     foreach($result as $value)
     {
-        print("<div class = 'ads'> <p>".$value['username']."</p>"."<p>".$value['first_name']."</p>"."<p>".$value['last_name']."</p>"."<p>".$value['bio']."</p>");
+        print("<p>Username</p> <p>".$value['username']."</p>"."<p>Firstname</p>"."<p>".$value['first_name']."</p>"."<p>Surname</p>".
+        "<p>".$value['last_name']."</p>"."<p>Bio</p>"."<p>".$value['bio']);
         if($value['gender']==1) $gender = "Male"; 
         elseif($value['gender']==2) $gender = "Female";
         elseif($value['gender']==3) $gender = "Other";
-        print("<p>".$gender."</p></div>");
+        print("<p>Gender</p><p>".$gender."</p>");
     }
 }
 ?>
