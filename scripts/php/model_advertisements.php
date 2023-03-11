@@ -42,6 +42,7 @@ if(isset($_SESSION['username']))
         print("<div class = 'ads'> <div class='username'><p>Username: ".$value['username']."</p></div>"
         ."<div class='firstname'><p>Firstname: ".$value['first_name']."</p></div>"
         ."<div class='lastname'><p>Surname: ".$value['last_name']."</p></div>"
+        ."<div class='dob'><p>Date of birth: ".$value['dateofbirth']."</p></div>"
         ."<div class='zipcode'><p>Zipcode: ".$value['zipcode']."</p></div>"
         ."<div class='bio'><p>Bio: </p><p>".$value['bio']."</p></div>"
         ."<div class='salary'><p>Salary: ".$value['salary']."</p></div>"

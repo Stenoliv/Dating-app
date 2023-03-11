@@ -22,6 +22,8 @@
     <br>
     Zipcode: <input type="number" name="zipcode" value="" required>
     <br>
+    Date of birth: <input type="date" name="dob" value="" required>
+    <br>
     Bio: <textarea rows="5" cols="40" name="bio" value="" required></textarea>
     <br>
     Gender:

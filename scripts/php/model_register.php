@@ -2,7 +2,7 @@
 include "./handy_methods.php";
 $errorurl = "Location:../../pages/register.php";
 $time = time()+ 60*60*24*30;
-if(isset ($_POST['username']) && isset ($_POST['firstname']) && isset ($_POST['lastname']) && isset ($_POST['email']) && isset ($_POST['salary']) && isset ($_POST['bio']) && isset ($_POST['zipcode']) && isset ($_POST['password']) && isset ($_POST['gender']) && isset ($_POST['preference']))
+if(isset ($_POST['username']) && isset ($_POST['firstname']) && isset ($_POST['lastname']) && isset ($_POST['email']) && isset ($_POST['salary']) && isset ($_POST['bio']) && isset ($_POST['zipcode']) && isset ($_POST['password']) && isset ($_POST['gender']) && isset ($_POST['preference'])&& isset ($_POST['dob']))
 {
     $user = test_input($_POST['username']);
     if(empty($user)) 
@@ -40,6 +40,14 @@ if(isset ($_POST['username']) && isset ($_POST['firstname']) && isset ($_POST['l
     if(empty($salary) || (is_numeric($salary)==false)) 
     {
         $errormsg = "Fix your documentation: Salary!";
+        setcookie('err',$errormsg,$time,"/");
+        header($errorurl);
+        exit;
+    }
+    $dob = test_input($_POST['dob']);
+    if(empty($dob)) 
+    {
+        $errormsg = "Fix your documentation: Date of birth!";
         setcookie('err',$errormsg,$time,"/");
         header($errorurl);
         exit;
@@ -116,13 +124,13 @@ if(isset ($_POST['username']) && isset ($_POST['firstname']) && isset ($_POST['l
     }
     else
     {
-        $sql ="INSERT INTO profiles (username,password,first_name,last_name,salary,zipcode,bio,gender,preference,email) VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $sql ="INSERT INTO profiles (username,password,first_name,last_name,salary,dateofbirth,zipcode,bio,gender,preference,email) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $conn->prepare($sql);
         $hashedpassw = password_hash($passw, PASSWORD_DEFAULT);
         $gender = intval($gender);
         $preference = intval($preference);
         $salary = intval($salary);
-        $stmt->execute([$user,$hashedpassw,$firstname,$lastname,$salary,$zipcode,$bio,$gender,$preference,$email]);
+        $stmt->execute([$user,$hashedpassw,$firstname,$lastname,$salary,$dob,$zipcode,$bio,$gender,$preference,$email]);
         if($stmt)
         {
             $_SESSION['username'] = $user;
@@ -130,6 +138,7 @@ if(isset ($_POST['username']) && isset ($_POST['firstname']) && isset ($_POST['l
             $_SESSION['last_name'] = $lastname;
             $_SESSION['email'] = $email;
             $_SESSION['salary'] = $salary;
+            $_SESSION['dob'] = $dob;
             $_SESSION['zipcode'] = $zipcode;
             $_SESSION['bio'] = $bio;
             $_SESSION['gender'] = $gender;
