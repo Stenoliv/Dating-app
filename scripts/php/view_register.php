@@ -22,7 +22,7 @@
     <br>
     Zipcode: <input type="number" name="zipcode" value="" required>
     <br>
-    Date of birth: <input type="date" name="dob" value="" required>
+    Date of birth: <input type="date" name="dob" value="" required required pattern="\d{4}-\d{2}-\d{2}">
     <br>
     Bio: <textarea rows="5" cols="40" name="bio" value="" required></textarea>
     <br>
