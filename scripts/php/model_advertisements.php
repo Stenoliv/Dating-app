@@ -37,12 +37,22 @@ if(isset($_SESSION['username']))
     }
     else setcookie('viewdprof',$result[array_key_last($result)]['id'],time()+60*60*24*30*4);
     
+
     foreach($result as $value)
     {
+        $dobbie = $value['dateofbirth'] ;
+        $stampped = strtotime($dobbie);
+        $dobnew = date("d-m-Y",$stampped);
+
+        //lånad kod för uträkning av ålder från https://www.codexworld.com/how-to/calculate-age-from-date-of-birth-php/
+        $today = date("Y-m-d");
+        $age = date_diff(date_create($dobnew), date_create($today));
+
         print("<div class = 'ads'> <div class='username'><p>Username: ".$value['username']."</p></div>"
         ."<div class='firstname'><p>Firstname: ".$value['first_name']."</p></div>"
         ."<div class='lastname'><p>Surname: ".$value['last_name']."</p></div>"
-        ."<div class='dob'><p>Date of birth: ".$value['dateofbirth']."</p></div>"
+        ."<div class='dob'><p>Date of birth: ".$dobnew."</p></div>"
+        ."<div class='age'><p>Age: ".$age->format('%y')." years old"."</p></div>"
         ."<div class='zipcode'><p>Zipcode: ".$value['zipcode']."</p></div>"
         ."<div class='bio'><p>Bio: </p><p>".$value['bio']."</p></div>"
         ."<div class='salary'><p>Salary: ".$value['salary']." Euros annually"."</p></div>"
@@ -63,7 +73,7 @@ if(isset($_SESSION['username']))
 }
 else
 {
-    $sql = "SELECT * FROM profiles WHERE id>$id ORDER BY id LIMIT 4" ;
+    $sql = "SELECT * FROM profiles WHERE id>$id ORDER BY id LIMIT 3" ;
     $stmt = $conn->query($sql);
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if($stmt->rowCount()<=0) 
