@@ -1,6 +1,6 @@
 <header>
     <!-- Logo och meny i headern -->
-    <img class="headerLogo" src="../media/Logo.svg" alt="Website logo" />
+    <img class="headerLogo" src="../media/logo.svg" alt="Website logo" />
     <div id="logo">Profiles Please</div>
     
 

@@ -12,10 +12,18 @@
             <input type='radio' name='preference' <?php if (isset($pref) && $pref=='any') echo 'checked';?> value='4'>Any
             <br>
             Salary:
-            <input type='number' name='salary' value=''>
+            <select name='salary'>
+                <option value="0">Order by salary</option>
+                <option value="1">High to low</option>
+                <option value="2">Low to high</option>
+            </select>
             <br>
             Likes:
-            <input type='number' name='likes' value=''>
+            <select name='likes'>
+                <option value="0">Order by likes</option>
+                <option value="1">High to low</option>
+                <option value="2">Low to high</option>
+            </select>
             <br>
             <input type="submit" name="submit" value="Filter">
         </form>
