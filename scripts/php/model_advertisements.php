@@ -54,7 +54,6 @@ if(isset($_SESSION['username']))
     }
     else setcookie('viewdprof',$result[array_key_last($result)]['id'],time()+60*60*24*30*4);
     
-    print_r($filter);
     foreach($result as $value)
     {
         $dobbie = $value['dateofbirth'] ;
@@ -65,13 +64,14 @@ if(isset($_SESSION['username']))
         $today = date("Y-m-d");
         $age = date_diff(date_create($dobnew), date_create($today));
 
-        print("<div class = 'ads'> <div class='username'><p>Username: ".$value['username']."</p></div>"
+        print("<div class = 'ads'> <div class='username'><p>".$value['username']."</p></div>"
+        ."<div class='profilepic'><img src='../media/profile-pictures/".$value['profile_pic']."'</img></div>"
         ."<div class='firstname'><p>Firstname: ".$value['first_name']."</p></div>"
         ."<div class='lastname'><p>Surname: ".$value['last_name']."</p></div>"
         ."<div class='dob'><p>Date of birth: ".$dobnew."</p></div>"
         ."<div class='age'><p>Age: ".$age->format('%y')." years old"."</p></div>"
         ."<div class='zipcode'><p>Zipcode: ".$value['zipcode']."</p></div>"
-        ."<div class='bio'><p>Bio: </p><p>".$value['bio']."</p></div>"
+        ."<div class='bio'><p>Bio: </p><p class='biotext'>".$value['bio']."</p></div>"
         ."<div class='salary'><p>Salary: ".$value['salary']." Euros annually"."</p></div>"
         ."<div class='email'><p>Email: ".$value['email']."</p></div>"
         ."<div class='likes'><p>Number of likes: ".$value['likes']."</p></div>");
@@ -85,7 +85,7 @@ if(isset($_SESSION['username']))
         elseif($value['preference']==2) $prefix = "Female";
         elseif($value['preference']==3) $prefix = "other";
         elseif($value['preference']==4) $prefix = "Any";
-        print("<div class='preference'><p>Preference: ".$prefix."</p></div>");
+        print("<div class='preference'><p>Preference: ".$prefix."</p></div></div>");
     }
 }
 else
@@ -101,12 +101,14 @@ else
     setcookie('viewdprof',$result[array_key_last($result)]['id'],time()+60*60*24*30*4);
     foreach($result as $value)
     {
-        print("<p>Username</p> <p>".$value['username']."</p>"."<p>Firstname</p>"."<p>".$value['first_name']."</p>"."<p>Surname</p>".
-        "<p>".$value['last_name']."</p>"."<p>Bio</p>"."<p>".$value['bio']);
+        print("<div class = 'ads'> <div class='username'><p>Username: ".$value['username']."</p></div>"
+        ."<div class='firstname'><p>Firstname: ".$value['first_name']."</p></div>"
+        ."<div class='lastname'><p>Surname: ".$value['last_name']."</p></div>"
+        ."<div class='bio'><p>Bio: </p><p class='biotext'>".$value['bio']."</p></div>");
         if($value['gender']==1) $genders = "Male"; 
         elseif($value['gender']==2) $genders = "Female";
         elseif($value['gender']==3) $genders = "Other";
-        print("<p>Gender</p><p>".$genders."</p>");
+        print("<div class='gender'><p>Gender: ".$genders."</p></div></div>");
     }
 }
 ?>

@@ -16,7 +16,7 @@
         <section>
 
             <article>
-                <h2>Welcome to Profiles Please comrade!</h2>
+                <h2 class="titleofpage">Welcome to Profiles Please comrade!</h2>
                 <?php include "../scripts/php/view_advertisements.php" ?>
             </article>
 
