@@ -71,7 +71,7 @@ if(isset($_SESSION['username']))
         ."<div class='dob'><p>Date of birth: ".$dobnew."</p></div>"
         ."<div class='age'><p>Age: ".$age->format('%y')." years old"."</p></div>"
         ."<div class='zipcode'><p>Zipcode: ".$value['zipcode']."</p></div>"
-        ."<div class='bio'><p>Bio: </p><p class='biotext'>".$value['bio']."</p></div>"
+        ."<div class='bio'><p class='biotitle'>Bio </p><p class='biotext'>".$value['bio']."</p></div>"
         ."<div class='salary'><p>Salary: ".$value['salary']." Euros annually"."</p></div>"
         ."<div class='email'><p>Email: ".$value['email']."</p></div>"
         ."<div class='likes'><p>Number of likes: ".$value['likes']."</p></div>");

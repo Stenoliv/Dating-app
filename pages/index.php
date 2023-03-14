@@ -28,6 +28,7 @@
         </footer>
 
     </div>
+    <script src="../scripts/js/filterbutton.js"></script>
 </body>
 
 </html>

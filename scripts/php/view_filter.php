@@ -1,30 +1,37 @@
-<h2>Filter your results</h2>
-        <form method='post' action='../scripts/php/model_filter.php'>
-            Gender:
-            <input type='radio' name='gender' <?php if (isset($gender) && $gender=='female') echo 'checked';?> value='2'>Female
-            <input type='radio' name='gender' <?php if (isset($gender) && $gender=='male') echo 'checked';?> value='1'>Male
-            <input type='radio' name='gender' <?php if (isset($gender) && $gender=='other') echo 'checked';?> value='3'>Other
+<h2 class="filtertitle">Filter your results</h2>
+<button class="openfilter">Open filter</button>
+        <form class= 'filter' method='post' action='../scripts/php/model_filter.php' style="display: none;">
+            Filter according to gender
+            <select class='filteropt' name='gender'>
+                <option value="0">Gender</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+                <option value="3">Other</option>
+            </select>
             <br>
-            Preference: 
-            <input type='radio' name='preference' <?php if (isset($pref) && $pref=='female') echo 'checked';?> value='2'>Female
-            <input type='radio' name='preference' <?php if (isset($pref) && $pref=='male') echo 'checked';?> value='1'>Male
-            <input type='radio' name='preference' <?php if (isset($pref) && $pref=='other') echo 'checked';?> value='3'>Other
-            <input type='radio' name='preference' <?php if (isset($pref) && $pref=='any') echo 'checked';?> value='4'>Any
+            Filter according to preference 
+            <select class='filteropt' name='preference'>
+                <option value="0">Preference</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+                <option value="3">Other</option>
+                <option value="4">Any</option>
+            </select>
             <br>
-            Salary:
-            <select name='salary'>
+            Order by salary
+            <select class='filteropt' name='salary'>
                 <option value="0">Order by salary</option>
                 <option value="1">High to low</option>
                 <option value="2">Low to high</option>
             </select>
             <br>
-            Likes:
-            <select name='likes'>
+            Order by ikes
+            <select class='filteropt' name='likes'>
                 <option value="0">Order by likes</option>
                 <option value="1">High to low</option>
                 <option value="2">Low to high</option>
             </select>
             <br>
-            <input type="submit" name="submit" value="Filter">
+            <input class='filteropt' type="submit" name="submit" value="Filter">
         </form>
         <br>
