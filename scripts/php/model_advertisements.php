@@ -65,7 +65,7 @@ if(isset($_SESSION['username']))
         $age = date_diff(date_create($dobnew), date_create($today));
 
         print("<div class = 'ads'> <div class='username'><p>".$value['username']."</p></div>"
-        ."<div class='profilepic'><img class='profilepic'src='../media/profile-pictures/".$value['profile_pic']."'></img></div>"
+        ."<div><img class='profilepic'src='../media/profile-pictures/".$value['profile_pic']."'></img></div>"
         ."<div class='firstname'><p>Firstname: ".$value['first_name']."</p></div>"
         ."<div class='lastname'><p>Surname: ".$value['last_name']."</p></div>"
         ."<div class='dob'><p>Date of birth: ".$dobnew."</p></div>"

@@ -114,10 +114,15 @@ footer {
     font-size: 26px;
     border-bottom: 2px solid black;
 }
-img
-{
-    width: 100%;
+.profilepic{
+    display: flex;
+    position: relative;
+    margin: auto;
+    max-width: 50%;
+    height: auto;
+    border:3px solid #292929;
 }
+
 /* Responsiv styling */
 @media (max-width: 640px) {
     header {
