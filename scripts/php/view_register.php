@@ -53,5 +53,5 @@
     <br>  
     Password: <input class="regfield" type="password" name="password" value="" required>
     <br>
-    <input class="regsubmit" type="submit" name="submit" value="Submit">
+    <input class="regsubmit" type="submit" name="submit" value="Register">
 </form>

@@ -17,6 +17,7 @@
 
             <article>
                 <h2 class="titleofpage">Welcome to Profiles Please comrade!</h2>
+                <p class="infotext">Here you can look at others profiles on the site!</p>
                 <?php include "../scripts/php/view_advertisements.php" ?>
             </article>
 

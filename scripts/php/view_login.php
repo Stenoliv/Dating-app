@@ -14,5 +14,5 @@
     <br>
     Password <br><input class="loginfield" type="password" name="password" value="" required>
     <br>
-    <input class="loginsubmit" type="submit" name="submit" value="Submit">
+    <input class="loginsubmit" type="submit" name="submit" value="Log in">
 </form>

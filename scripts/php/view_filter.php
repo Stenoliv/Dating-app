@@ -25,7 +25,7 @@
                 <option value="2">Low to high</option>
             </select>
             <br>
-            Order by ikes
+            Order by likes
             <select class='filteropt' name='likes'>
                 <option value="0">Order by likes</option>
                 <option value="1">High to low</option>

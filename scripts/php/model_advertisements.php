@@ -50,7 +50,7 @@ if(isset($_SESSION['username']))
     if($stmt->rowCount()<=0) 
     {
         setcookie("viewdprof","",-1);
-        Print("<p>NO PROFILES FOUND</p>");
+        Print("<p class='proferr'>NO PROFILES FOUND!</p>");
     }
     else setcookie('viewdprof',$result[array_key_last($result)]['id'],time()+60*60*24*30*4);
     
