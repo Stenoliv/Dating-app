@@ -114,7 +114,10 @@ footer {
     font-size: 26px;
     border-bottom: 2px solid black;
 }
-
+img
+{
+    width: 100%;
+}
 /* Responsiv styling */
 @media (max-width: 640px) {
     header {
