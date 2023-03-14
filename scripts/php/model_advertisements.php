@@ -104,7 +104,7 @@ else
         print("<div class = 'ads'> <div class='username'><p>Username: ".$value['username']."</p></div>"
         ."<div class='firstname'><p>Firstname: ".$value['first_name']."</p></div>"
         ."<div class='lastname'><p>Surname: ".$value['last_name']."</p></div>"
-        ."<div class='bio'><p>Bio: </p><p class='biotext'>".$value['bio']."</p></div>");
+        ."<div class='bio'><p class='biotitle'>Bio </p><p class='biotext'>".$value['bio']."</p></div>");
         if($value['gender']==1) $genders = "Male"; 
         elseif($value['gender']==2) $genders = "Female";
         elseif($value['gender']==3) $genders = "Other";

@@ -16,12 +16,14 @@
         <section>
 
             <article>
-                <h2>Welcome to Profiles Please comrade!</h2>
-                <h2> Here you will submit your registration!</h2>
+                <h2 class="registertitle">Welcome to Profiles Please comrade! Here you will submit your registration!</h2>
                 <?php include "../scripts/php/view_register.php"?>
                 
             </article>
-
+            <article>
+                <h3 class="noprofile">Already have a profile? click here to log in!</h3>
+                <a class="linktoreg" href="../pages/login.php">Login</a>
+            </article>
         </section>
 
         <!-- Footern innehåller t.ex. somelänkar och kontaktuppg -->

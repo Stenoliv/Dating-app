@@ -9,10 +9,10 @@
     }
     ?>
 </div>
-<form action="../scripts/php/model_login.php" method="post"> 
-    Username: <input type="text" name="username" value="" required>
+<form class="loginform" action="../scripts/php/model_login.php" method="post"> 
+    Username <br><input class="loginfield" type="text" name="username" value="" required>
     <br>
-    Password: <input type="password" name="password" value="" required>
+    Password <br><input class="loginfield" type="password" name="password" value="" required>
     <br>
-    <input type="submit" name="submit" value="Submit">
+    <input class="loginsubmit" type="submit" name="submit" value="Submit">
 </form>

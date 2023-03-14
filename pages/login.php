@@ -16,10 +16,13 @@
         <section>
 
             <article>
-                <h2>Welcome to Profiles Please comrade!</h2>
+                <h2 class="logintitle">Welcome to Profiles Please comrade! Please log in!</h2>
                 <?php include "../scripts/php/view_login.php" ?>
             </article>
-
+            <article>
+                <h3 class="noprofile">No profile? click here to register today!</h3>
+                <a class="linktoreg" href="../pages/register.php">Register</a>
+            </article>
         </section>
 
         <!-- Footern innehåller t.ex. somelänkar och kontaktuppg -->
