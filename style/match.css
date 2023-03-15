@@ -45,6 +45,7 @@ h2.center-text {
     border-image-source: url(../media/test_frame.png);
     border-image-slice: 13;
     border-image-repeat: stretch;
+    margin-bottom: 100px;
 }
 
 /* Info Box */

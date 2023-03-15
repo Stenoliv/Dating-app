@@ -116,7 +116,7 @@ function update() {
 
 function returnX(btn) {
     if (window.innerWidth > 800) {
-        return (btn.getBoundingClientRect().x - ((window.innerWidth - 800) / 2)) + (btn.getBoundingClientRect().width - stamptool.getBoundingClientRect().width) / 2 + 'px'
+        return (btn.getBoundingClientRect().x - ((window.innerWidth - 820) / 2)) + (btn.getBoundingClientRect().width - stamptool.getBoundingClientRect().width) / 2 + 'px'
     } else {
         return btn.getBoundingClientRect().x + (btn.getBoundingClientRect().width - stamptool.getBoundingClientRect().width) / 2 + 'px'
     }

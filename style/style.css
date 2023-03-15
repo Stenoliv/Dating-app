@@ -345,6 +345,23 @@ article
     padding: 16px;
     margin: 8px;
 }
+
+.refresh-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.refresh-btn { 
+    width: 40%;
+    font-size: 16px;
+    background-color: #546353;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+}
+
 /* Responsiv styling */
 @media (max-width: 640px) {
     header {

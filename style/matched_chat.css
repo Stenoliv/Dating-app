@@ -64,10 +64,29 @@
 }
 
 .chat-info p {
+    display: flex;
+    flex: 1;
     padding: 0;
     margin: 0;
     margin-top: 15px;
     margin-left: 15px;
+}
+
+form.un_match {
+    display: flex;
+    flex: 2;
+    padding: 0;
+    margin: 0;
+    margin-top: 15px;
+    justify-content: right;
+    margin-right: 15px;
+}
+
+.unmatch-btn {
+    padding: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0;
 }
 
 .chat-view {

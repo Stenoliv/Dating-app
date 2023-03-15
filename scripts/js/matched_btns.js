@@ -20,16 +20,19 @@ function loadInFirstChat(elem) {
     xhttp.open("GET", "../scripts/php/ajax/openChat.php?id=" + elem.dataset.user_id)
     xhttp.send();
 }
-/*
-setInterval(function() {
+
+setInterval(function () {
     const xhttp = new XMLHttpRequest
     const id = document.querySelector('.chat-text-field').dataset.other_id
     xhttp.onload = function () {
-        const lastHeitght = document.querySelector('.chat-view').scrollTop
-        document.querySelector('.chatbox').innerHTML = this.responseText;
-        document.querySelector('.chat-view').scrollTop = lastHeitght
+        const lastHeitght = document.querySelector('.chat-view').scrollTop;
+        if (this.responseText) {
+            document.querySelector('.chat-view').innerHTML += this.responseText;
+        } else {
+            document.querySelector('.chat-view').scrollTop = lastHeitght
+        }
     }
-    xhttp.open("GET", "../scripts/php/ajax/refreshChat.php?id="+id)
+    xhttp.open("GET", "../scripts/php/ajax/refreshChat.php?id=" + id)
     xhttp.send();
     console.log("RefreshChat()")
-}, 3000) */
+}, 1500)

@@ -1,0 +1,43 @@
+.like-columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 3;
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.like {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    margin: 1.5%;
+    background-color: var(--paperColor);
+}
+
+.like-user {
+    font-size: 20px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.like-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.center-elem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
