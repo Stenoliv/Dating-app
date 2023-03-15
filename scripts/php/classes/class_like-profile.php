@@ -2,6 +2,7 @@
 class likeProfile
 {
 
+
     public $likedId = "";
     public $user_id = "";
 

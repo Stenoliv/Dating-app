@@ -7,7 +7,7 @@ if (isset($_POST['like_button'])) {
     $like = new likeProfile;
     $like->user_id = $_SESSION['id'];
     $like->likedId = $_POST['like_button'];
-    $like->likeProfile($conn);
+    $like->likeProfile($conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password));
 }
 else if (isset($_POST['dislike_button'])) {
     header("Location: ../../pages/match.php");
