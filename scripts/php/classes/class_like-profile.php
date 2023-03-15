@@ -1,5 +1,5 @@
 <?php
-class likeProfile
+class like_profile
 {
 
 
