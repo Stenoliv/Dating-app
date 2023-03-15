@@ -1,7 +1,7 @@
 <?php
 if ($result) :
     $objChat = json_decode($result['Message'], TRUE);
-
+    $_SESSION['lastmsg'] = $objChat;
     $chatUsername = "Test";
     $otherID = "";
     if ($_SESSION['id'] == $result['FromUser']) {
@@ -21,12 +21,11 @@ if ($result) :
         <p>Chatting With:</p>
         <p><?= $chatUsername ?></p>
         <form class="un_match" action="../scripts/php/model_unmatch.php" method="post">
-            <button type="submit" name="un-match" value="<?= $chatUsername ?>">UnMatch</button>
+            <button class="unmatch-btn" type="submit" name="un-match" value="<?= $chatUsername ?>">UnMatch</button>
         </form>
     </div>
     <div class="chat-view">
         <?php
-        //Revers Order: $objChat = array_reverse($objChat);
         foreach ($objChat as $elem): ?>
             <div class="message <?php if ($elem['user'] == $_SESSION['username']) echo "my_text";
                                 else echo "other_text" ?>">

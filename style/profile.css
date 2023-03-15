@@ -1,7 +1,3 @@
-:root {
-    --paperColor: #e6d977;
-}
-
 * {
     font-family: Papers please;
 }
@@ -22,10 +18,6 @@ form {
     padding-right: 0;
     max-width: 500px;
     border: 15px solid transparent;
-    border-image-source: url(../media/test_frame2.png);
-    border-image-slice: 15;
-    border-image-repeat: round;
-    border-image-outset: 5px;
     background-color: var(--paperColor);
     overflow: hidden;
 }
@@ -160,6 +152,10 @@ h4.edit-profile_row {
     background-color: var(--paperColor);
     word-wrap: normal;
     overflow-x: hidden;
+}
+
+.edit-profile_rc.age {
+    flex-direction: row;
 }
 
 .edit-profile_lc.bio {

@@ -11,10 +11,11 @@ if (!isset($_SESSION['username'])) header("Location: ./login.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Likes</title>
     <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/match.css">
     <link rel="icon" type="image/x-icon" href="../media/logoICO.ico">
 </head>
 
-<body>
+<body onload="initAnimation()">
 
     <div id="container">
         <?php include "../scripts/php/header.php" ?>
@@ -24,14 +25,22 @@ if (!isset($_SESSION['username'])) header("Location: ./login.php");
                 <?php include "../scripts/php/model_match.php" ?>
             </article>
 
+
+
         </section>
 
+        <div class="stampdiv">
+            <div class="stampHome">
+                <img class="stamptool home" src="../media/stamp_tool.png" alt="tool">
+            </div>
+        </div>
+
         <!-- Footern innehåller t.ex. somelänkar och kontaktuppg -->
-        <footer>
-            Made by The Soviet Union<sup>&#169;</sup>
-        </footer>
+        <?php include "../scripts/php/footer.php"?>
 
     </div>
 </body>
+
+<script src="../scripts/js/stampAnimation.js"></script>
 
 </html>

@@ -21,6 +21,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             $_SESSION['preference'] = $result["preference"];
             $_SESSION['profile_pic'] = $result["profile_pic"];
             $_SESSION['id'] = $result['id'];
+            $_SESSION['dob'] = $result['dateofbirth'];
             header("Location:../../pages/");
             exit;
         } else {

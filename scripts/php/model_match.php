@@ -18,7 +18,18 @@ $cookieName = 'match_lastViewedID';
 $lastViewedId = 0;
 if (isset($_COOKIE[$cookieName])) {
     if ($_COOKIE[$cookieName] == 'TryAgain') {
-        echo 'No more profiles, Try to refresh the page!';
+        ?>
+        <div class="center-text">
+            <h2>There are no more profiles available! Try refreshing the page!</h2>
+            <button class="center-elem filteropt" onclick="refresh()">refresh</button>
+        </div>
+
+        <script>
+            function refresh() {
+                window.location.reload();
+            }
+        </script>
+        <?php
         setcookie($cookieName, '', -1, "/");
     } else {
         $lastViewedId = $_COOKIE[$cookieName];
@@ -49,6 +60,7 @@ if (isset($_COOKIE[$cookieName])) {
                 $potential_match->zipcode = $result['zipcode'];
                 $potential_match->profile_pic = $result['profile_pic'];
                 $potential_match->bio = $result['bio'];
+                $potential_match->age = $result['dateofbirth'];
 
                 $potential_match->ShowProfile();
             } else {

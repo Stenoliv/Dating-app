@@ -1,0 +1,238 @@
+:root {
+    --Btnpadding: 20px;
+}
+
+.center-elem {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-elem:hover {
+    background-color: #384137;
+}
+
+.center-text {
+    text-decoration: none;
+    text-align: center;
+    font-weight: 100;
+}
+
+h2.center-text {
+    border-bottom: 5px black dashed;
+}
+
+.container-profile {
+    background-color: var(--paperColor);
+    max-width: 500px;
+    min-height: 600px;
+    padding: 0;
+    margin: 0;
+    margin-top: 50px;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-border {
+    border: 12px solid transparent;
+    border-image-source: url(../media/test_frame.png);
+    border-image-slice: 13;
+    border-image-repeat: stretch;
+    margin-bottom: 100px;
+}
+
+/* Info Box */
+.profile-info {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+.info-left {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0;
+    margin: 0;
+}
+
+/* Info table display */
+.info-table {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.info-row {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    border-bottom: 1px black solid;
+}
+
+.info-lc {
+    display: flex;
+    flex: 3;
+}
+
+.info-rc {
+    display: flex;
+    flex: 2;
+    overflow-x: auto;
+    font-weight: 100;
+}
+
+.info-picture {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    object-fit: cover;
+    margin: auto;
+    display: flex;
+    flex: 5;
+    flex-direction: row;
+}
+
+
+/* General info */
+.general-info-box {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    border-top: 5px black solid;
+}
+
+.general-row {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    border-bottom: 1px black solid;
+    min-height: 40px;
+    align-items: center;
+}
+
+.general-lc {
+    display: flex;
+    flex: 3;
+}
+
+.general-rc {
+    display: flex;
+    flex: 7;
+    overflow-x: auto;
+    font-weight: 100;
+}
+
+.general-rc.bio-2 {
+    height: auto;
+    height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+}
+
+/* Buttons */
+.match-buttons {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 15px;
+    position: absolute;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+}
+
+.match-form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex: 0.9;
+}
+
+.lbtn {
+    flex: 1;
+    background-color: var(--paperColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5px;
+    margin-left: 0;
+    padding: 0;
+    padding-top: var(--Btnpadding);
+    padding-bottom: var(--Btnpadding);
+    border: 8px solid transparent;
+    border-image-source: url(../media/test_frame3.png);
+    border-image-slice: 8;
+    border-image-repeat: stretch;
+    background-color: var(--paperColor);
+}
+
+
+.rbtn {
+    flex: 1;
+    background-color: var(--paperColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5px;
+    margin-right: 0;
+    padding: 0;
+    padding-top: var(--Btnpadding);
+    padding-bottom: var(--Btnpadding);
+    border: 8px solid transparent;
+    border-image-source: url(../media/test_frame3.png);
+    border-image-slice: 8;
+    border-image-repeat: stretch;
+    background-color: var(--paperColor);
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+
+.stampdiv {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 800px;
+    height: 100vh;
+    pointer-events: none;
+}
+
+.stampHome {
+    position: relative;
+    pointer-events: none;
+    height: 100vh;
+}
+
+.stamptool {
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    z-index: 100;
+    max-width: 160px;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.home {
+    bottom: 50px;
+    right: 15px;
+}

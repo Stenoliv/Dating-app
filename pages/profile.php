@@ -23,8 +23,8 @@ include "../scripts/php/checkIfLoggedIn.php";
         <section>
             <?php include "../scripts/php/view_edit-profile.php" ?>
         </section>
+        <?php include "../scripts/php/footer.php" ?>
     </div>
-    <?php include "../scripts/php/footer.php"?>
 </body>
 
 </html>
