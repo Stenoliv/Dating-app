@@ -108,15 +108,16 @@ function update() {
         timer = setInterval(update, duration / 1000)
         return;
     }
+    stamptool.style.left = returnX(cbtn);
     stamptool.style.top = cbtn.getBoundingClientRect().y - stamptool.getBoundingClientRect().height - 15 + 'px';
     stamptool.classList.remove('home')
     console.log("update - loop")
 }
 
 function returnX(btn) {
-    if(window.innerWidth > 800) {
-        return btn.getBoundingClientRect().x + window.scrollX + (btn.getBoundingClientRect().width - stamptool.getBoundingClientRect().width) / 2 - ((window.innerWidth-800) / 2)+ 'px'
+    if (window.innerWidth > 800) {
+        return (btn.getBoundingClientRect().x - ((window.innerWidth - 800) / 2)) + (btn.getBoundingClientRect().width - stamptool.getBoundingClientRect().width) / 2 + 'px'
     } else {
-        return btn.getBoundingClientRect().x + window.scrollX + (btn.getBoundingClientRect().width - stamptool.getBoundingClientRect().width) / 2 + 'px'
+        return btn.getBoundingClientRect().x + (btn.getBoundingClientRect().width - stamptool.getBoundingClientRect().width) / 2 + 'px'
     }
 }
