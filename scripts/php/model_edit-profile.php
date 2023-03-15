@@ -94,6 +94,7 @@ if (isset($_POST['upload-profile-pic'])) {
     $bio = "";
     $preference = "";
     $gender = "";
+    $age = "";
 
     if (isset($_POST['firstname']) && !empty(test_input($_POST['firstname']))) $firstname = test_input($_POST['firstname']);
     if (isset($_POST['lastname']) && !empty(test_input($_POST['lastname']))) $lastname = test_input($_POST['lastname']);
@@ -102,11 +103,12 @@ if (isset($_POST['upload-profile-pic'])) {
     if (isset($_POST['bio']) && !empty(test_input($_POST['bio']))) $bio = test_input($_POST['bio']);
     if (isset($_POST['preference']) && !empty(test_input($_POST['preference'])) && is_numeric(test_input($_POST['preference']))) $preference = test_input($_POST['preference']);
     if (isset($_POST['gender']) && !empty(test_input($_POST['gender'])) && is_numeric(test_input($_POST['gender']))) $gender = test_input($_POST['gender']);
+    if (isset($_POST['age']) && !empty(test_input($_POST['age']))) $age = test_input($_POST['age']);
 
-    $sql = "UPDATE profiles SET first_name=?, last_name=?, salary=?, zipcode=?, bio=?, preference=?, gender=? WHERE username=?";
+    $sql = "UPDATE profiles SET first_name=?, last_name=?, salary=?, zipcode=?, bio=?, preference=?, gender=?, dateofbirth=? WHERE username=?";
 
     $stmt = $conn->prepare($sql);
-    $stmt->execute([$firstname, $lastname, $salary, $zipcode, $bio, $preference, $gender, $username]);
+    $stmt->execute([$firstname, $lastname, $salary, $zipcode, $bio, $preference, $gender, $age, $username]);
 
     if ($stmt) {
         $_SESSION['first_name'] = $firstname;
@@ -116,6 +118,7 @@ if (isset($_POST['upload-profile-pic'])) {
         $_SESSION['bio'] = $bio;
         $_SESSION['gender'] = $gender;
         $_SESSION['preference'] = $preference;
+        $_SESSION['dob'] = $age;
 
         $cookiemsg = "Dating Permit updated!/green";
         setcookie($cookiename, $cookiemsg, $time, "/");

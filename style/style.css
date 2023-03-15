@@ -1,5 +1,5 @@
 :root {
-    --paperColor: #e6d977;
+    --paperColor: #fff5ca;
 }
 @font-face {
     font-family: 'Papers please';
@@ -56,9 +56,20 @@ nav li > a {
     padding: 8px;                   /* Förberedelse för hover */
     border-radius: 4px;
 }
+nav li > span {
+    text-decoration: none; /* bort med underline */
+    color: white; /* bort med inbyggd blå/lila text */
+    padding: 8px;                   /* Förberedelse för hover */
+    border-radius: 4px;
+}
 nav a:hover {
     background-color: #5c2420;    /* Byter bakgrund on hover "pseudoklass" */ 
 }
+nav span:hover {
+    background-color: #5c2420;
+    cursor: pointer;    /* Byter bakgrund on hover "pseudoklass" */ 
+}
+
 
 /* Allmängällande stilar */
 body {
@@ -71,7 +82,7 @@ body {
     color: #000000;
     max-width: 800px;
     margin: auto;
-    min-height: 100vh;
+    min-height: 90vh;
     padding-bottom: 150px;
 }
 article {

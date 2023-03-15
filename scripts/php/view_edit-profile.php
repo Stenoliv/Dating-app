@@ -89,6 +89,10 @@ if (!isset($_SESSION['username'])) header("Location: ./login.php");
                         document.getElementById('gender_option').value = index
                     </script>
                 </div>
+                <div class="edit-profile_row">
+                    <label class="edit-profile_lc">Age</label>
+                    <input class="edit-profile_rc age" type="date" name="age" value="<?= $_SESSION['dob'] ?>" pattern="\d{4}-\d{2}-\d{2}">
+                </div>
             </div>
             <div class="error-message <?= $class ?>">
                 <p class="<?= $cookiemsg[1] ?>"><?= $msg ?></p>
