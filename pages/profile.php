@@ -24,6 +24,7 @@ include "../scripts/php/checkIfLoggedIn.php";
             <?php include "../scripts/php/view_edit-profile.php" ?>
         </section>
     </div>
+    <?php include "../scripts/php/footer.php"?>
 </body>
 
 </html>

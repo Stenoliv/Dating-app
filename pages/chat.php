@@ -24,9 +24,7 @@ if (!isset($_SESSION['username'])) header("Location: ./login.php");
         </section>
 
         <!-- Footern innehåller t.ex. somelänkar och kontaktuppg -->
-        <footer>
-            Made by The Soviet Union<sup>&#169;</sup>
-        </footer>
+        <?php include "../scripts/php/footer.php"?>
 
     </div>
 </body>

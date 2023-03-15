@@ -1,15 +1,10 @@
+<?php include "../scripts/php/handy_methods.php" ?>
 <!DOCTYPE html>
-<?php include "../scripts/php/handy_methods.php";
-if (!isset($_SESSION['username'])) header("Location: ./login.php");
-?>
-
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Likes</title>
+    <title>Profiles Please</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="icon" type="image/x-icon" href="../media/logoICO.ico">
 </head>
@@ -20,9 +15,17 @@ if (!isset($_SESSION['username'])) header("Location: ./login.php");
         <?php include "../scripts/php/header.php" ?>
         <section>
 
-            <article>
-                <?php include "../scripts/php/view_like.php" ?>
-            </article>
+        <article class="rapport">
+                <h1 class="raphead1">Rasmus Räihäs rapport</h1>
+                <h2 class="raphead2">Inlärningsprocessen samt hur uppgiften gått</h2>
+                <p class="bröd">
+
+                </p>
+                <h3 class="raphead3">Allmän feedback om kursen</h3>
+                <p class="bröd">
+
+                </p>
+        </article>
 
         </section>
 
@@ -30,6 +33,7 @@ if (!isset($_SESSION['username'])) header("Location: ./login.php");
         <?php include "../scripts/php/footer.php"?>
 
     </div>
+    
 </body>
 
 </html>

@@ -289,8 +289,48 @@ article
     max-width: fit-content;
     margin-bottom: 100px;
 }
-a:hover{
+.linktoreg:hover{
     background-color: #384137;
+}
+.reportpage{
+    text-decoration: none; 
+    color: white; 
+    padding: 8px;                   
+    border-radius: 4px;
+    display: flex;
+    float: right;
+}
+.rapport{
+    width: 90%;
+    min-height: 800px;
+    background-color: #384137;
+    margin-left: auto;
+    margin-right: auto;
+}
+.reportpage:hover {
+    background-color: #5c2420;    /* Byter bakgrund on hover "pseudoklass" */ 
+}
+.raphead1{
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-decoration:underline double black 2px;
+}
+.raphead2{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.raphead3{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.bröd{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding: 16px;
+    margin: 8px;
 }
 /* Responsiv styling */
 @media (max-width: 640px) {
