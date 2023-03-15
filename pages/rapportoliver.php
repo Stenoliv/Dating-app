@@ -34,7 +34,7 @@
                 <p class="bröd">
                     Lite allmänn feedback om kursen, igen var uppgifts beskrivningarna lite otydliga och man måste tänkta och fundera på att vad är det nu egentligen 
                     man ska göra. Utbildningen i klassen var igen bra som vanligt och bra med påminnelserna och läxorna för att få projektet igång. Allting som kommer 
-                    till lärandet och sådant var bra, men uppgifts beskrivningar kunde du kanske lite öva på :). Tid som jag använde var lite under 60 timmar för projekt 2, 
+                    till lärandet och sådant var bra, men uppgifts beskrivningar kunde du kanske lite öva på :). Tid som jag använde var lite under 30 timmar för projekt 2, 
                     kändes nog inte som att jag skulle ha jobbat så mycket men tydligen har jag. Tack för kursen och hoppas på att har en annan kurs igen me dig snart!
                 </p>
             </article>
